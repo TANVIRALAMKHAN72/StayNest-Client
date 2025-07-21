@@ -4,7 +4,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// ✅ Corrected bannerImages structure (array of objects, not nested array)
+
 const bannerImages = [
   {
     img: "https://i.ibb.co/84YM8v2H/Starlit-Jahan-Garden-night2.png",
