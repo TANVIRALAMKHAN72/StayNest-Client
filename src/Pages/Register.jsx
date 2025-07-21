@@ -1,32 +1,33 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { useNavigate, useLocation, Link } from 'react-router';  // react-router-dom ব্যবহার করুন
-import { updateProfile } from 'firebase/auth';
-import { toast } from 'react-toastify';
-import useAuth from '../Hooks/useAuth';
-import lottie from '../../public/Register.json';
-import Lottie from 'lottie-react';
-import { FcGoogle } from 'react-icons/fc';  // Google icon
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate, useLocation, Link } from "react-router";
+import { updateProfile } from "firebase/auth";
+import { toast } from "react-toastify";
+import useAuth from "../Hooks/useAuth";
+import lottie from "../../public/Register.json";
+import Lottie from "lottie-react";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-  const { createUser, signInGoogle } = useAuth();  // Google signIn ফাংশন আনুন
+  const { createUser, signInGoogle } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
 
-  // Email/Password দিয়ে রেজিস্টার
   const onSubmit = async (data) => {
     const { name, email, password, photoURL } = data;
 
     if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
-      toast.error('Password must be at least 6 characters with both uppercase and lowercase letters');
+      toast.error(
+        "Password must be at least 6 characters with both uppercase and lowercase letters"
+      );
       return;
     }
 
@@ -34,63 +35,57 @@ const Register = () => {
       const result = await createUser(email, password);
       await updateProfile(result.user, {
         displayName: name,
-        photoURL: photoURL
+        photoURL: photoURL,
       });
 
-         // Firebase এ সেভ করার পরে তুমি নিজস্ব DB তে ইউজার ডাটা POST করো
-    const savedUser = {
-      name,
-      email,
-      photoURL,
-      role: 'user'  // এটা চাইলে পাঠানো যাবে, যদিও backend default দেয়
-    };
+      const savedUser = {
+        name,
+        email,
+        photoURL,
+        role: "user",
+      };
 
-    // তোমার backend URL এখানে দাও
-    await fetch('http://localhost:3000/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(savedUser)
-    });
+      await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(savedUser),
+      });
 
-
-      toast.success('Registration successful!');
+      toast.success("Registration successful!");
       reset();
 
       setTimeout(() => {
         navigate(from, { replace: true });
       }, 1500);
-
     } catch (error) {
       toast.error(error.message);
     }
   };
 
-  // Google দিয়ে রেজিস্টার / লগইন
- const handleGoogleRegister = async () => {
-  try {
-    const result = await signInGoogle();
-    const user = result.user;
+  const handleGoogleRegister = async () => {
+    try {
+      const result = await signInGoogle();
+      const user = result.user;
 
-    const savedUser = {
-      name: user.displayName,
-      email: user.email,
-      photoURL: user.photoURL,
-      role: 'user'
-    };
+      const savedUser = {
+        name: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        role: "user",
+      };
 
-    await fetch('http://localhost:3000/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(savedUser),
-    });
+      await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(savedUser),
+      });
 
-    toast.success("Google Sign-In successful!");
-    navigate(from, { replace: true });
-  } catch (error) {
-    toast.error("Google Sign-In failed: " + error.message);
-  }
-};
-
+      toast.success("Google Sign-In successful!");
+      navigate(from, { replace: true });
+    } catch (error) {
+      toast.error("Google Sign-In failed: " + error.message);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-100 px-4 py-8">
@@ -102,55 +97,58 @@ const Register = () => {
         <h2 className="text-2xl font-bold text-center">Register</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Name */}
           <div>
             <label className="label">Name</label>
             <input
               type="text"
-              {...register('name', { required: true })}
+              {...register("name", { required: true })}
               placeholder="Enter your name"
               className="input input-bordered w-full"
             />
-            {errors.name && <p className="text-red-500 text-sm">Name is required</p>}
+            {errors.name && (
+              <p className="text-red-500 text-sm">Name is required</p>
+            )}
           </div>
 
-          {/* Photo URL */}
           <div>
             <label className="label">Photo URL</label>
             <input
               type="text"
-              {...register('photoURL', { required: true })}
+              {...register("photoURL", { required: true })}
               placeholder="Enter photo URL"
               className="input input-bordered w-full"
             />
-            {errors.photoURL && <p className="text-red-500 text-sm">Photo URL is required</p>}
+            {errors.photoURL && (
+              <p className="text-red-500 text-sm">Photo URL is required</p>
+            )}
           </div>
 
-          {/* Email */}
           <div>
             <label className="label">Email</label>
             <input
               type="email"
-              {...register('email', { required: true })}
+              {...register("email", { required: true })}
               placeholder="Enter your email"
               className="input input-bordered w-full"
             />
-            {errors.email && <p className="text-red-500 text-sm">Email is required</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm">Email is required</p>
+            )}
           </div>
 
-          {/* Password */}
           <div>
             <label className="label">Password</label>
             <input
               type="password"
-              {...register('password', { required: true })}
+              {...register("password", { required: true })}
               placeholder="Enter password"
               className="input input-bordered w-full"
             />
-            {errors.password && <p className="text-red-500 text-sm">Password is required</p>}
+            {errors.password && (
+              <p className="text-red-500 text-sm">Password is required</p>
+            )}
           </div>
 
-          {/* Submit */}
           <div>
             <button type="submit" className="btn btn-primary w-full">
               Register
@@ -160,7 +158,6 @@ const Register = () => {
 
         <div className="divider">OR</div>
 
-        {/* Google Sign-In Button */}
         <button
           onClick={handleGoogleRegister}
           className="btn btn-outline w-full flex items-center justify-center gap-2"
@@ -170,7 +167,7 @@ const Register = () => {
         </button>
 
         <p className="text-center mt-4">
-          Already have an account?{' '}
+          Already have an account?{" "}
           <Link to="/login" className="text-blue-500 underline">
             Login
           </Link>
