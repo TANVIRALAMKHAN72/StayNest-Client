@@ -11,7 +11,7 @@ const Announcements = () => {
   } = useQuery({
     queryKey: ["announcements"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:3000/api/announcements");
+      const res = await axios.get("https://staynest-server.vercel.app/api/announcements");
       return res.data;
     },
   });

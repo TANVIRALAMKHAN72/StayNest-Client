@@ -33,7 +33,7 @@ const ApplyAgreement = () => {
     };
 
     try {
-      const res = await axios.post('http://localhost:3000/api/agreements', agreementData);
+      const res = await axios.post('https://staynest-server.vercel.app/api/agreements', agreementData);
       if (res.data.insertedId) {
          toast.success('Agreement request sent successfully!');
         navigate('/');

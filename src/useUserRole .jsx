@@ -15,7 +15,7 @@ const useUserRole = (email) => {
                 return null;
             }
             try {
-                const res = await axios.get(`http://localhost:3000/users/${email}`); 
+                const res = await axios.get(`https://staynest-server.vercel.app/users/${email}`); 
                 return res.data;
             } catch (error) {
                 console.error("Error fetching user role:", error);

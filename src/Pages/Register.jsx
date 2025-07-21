@@ -45,7 +45,7 @@ const Register = () => {
         role: "user",
       };
 
-      await fetch("http://localhost:3000/users", {
+      await fetch("https://staynest-server.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(savedUser),
@@ -74,7 +74,7 @@ const Register = () => {
         role: "user",
       };
 
-      await fetch("http://localhost:3000/users", {
+      await fetch("https://staynest-server.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(savedUser),

@@ -22,7 +22,7 @@ const MyProfile = () => {
     queryKey: ["userDetails", user?.email],
     queryFn: async () => {
       if (!user?.email) return null;
-      const res = await axios.get(`http://localhost:3000/users/${user.email}`);
+      const res = await axios.get(`https://staynest-server.vercel.app/users/${user.email}`);
       return res.data;
     },
     enabled: !!user?.email,

@@ -36,7 +36,7 @@ const Login = () => {
       const result = await signInGoogle();
       const user = result.user;
 
-      const backendUrl = "http://localhost:3000/users";
+      const backendUrl = "https://staynest-server.vercel.app/users";
 
       const savedUser = {
         name: user.displayName,

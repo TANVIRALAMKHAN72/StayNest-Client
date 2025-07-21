@@ -34,7 +34,7 @@ const Apartment = () => {
 
   const fetchApartments = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/apartments", {
+      const res = await axios.get("https://staynest-server.vercel.app/api/apartments", {
         params: {
           page,
           minRent: minRent || 0,

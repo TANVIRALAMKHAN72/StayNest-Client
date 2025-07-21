@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 StayNest is a modern, user-friendly apartment management system built for apartment members, renters, and administrators. It offers seamless rent payments, coupon discounts, and a powerful admin dashboard to manage apartments, users, and financials.
 
 🌐 Live Links
-🔗 Live link: [Insert your Client-side Live Link Here]
+🔗 Live link: [[Insert your Client-side Live Link Here](https://staynest-a232a.web.app/)]
 
 
 ✨ Features
