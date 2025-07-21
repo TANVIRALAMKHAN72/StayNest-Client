@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router'; // ✅ fixed router import
+import { useLocation, useNavigate, useParams } from 'react-router'; 
 import useAuth from '../Hooks/useAuth';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -50,14 +50,14 @@ const ApplyAgreement = () => {
   return (
     <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4 overflow-hidden relative">
-        {/* Image Section */}
+        
         <img
-          src={apartment.image} // ✅ make sure apartment.image exists
+          src={apartment.image} 
           alt="Apartment"
           className="w-full h-64 object-cover"
         />
 
-        {/* Content */}
+        
         <div className="p-6">
           <h2 className="text-2xl font-bold mb-3 text-center">Confirm Agreement</h2>
           <div className="space-y-1">
@@ -72,7 +72,7 @@ const ApplyAgreement = () => {
           <div className="mt-6 flex justify-between items-center">
             <button
               className="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded"
-              onClick={() => navigate(-1)} // go back
+              onClick={() => navigate(-1)} 
             >
               Cancel
             </button>
