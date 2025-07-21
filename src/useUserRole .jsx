@@ -1,7 +1,7 @@
-// src/Hooks/useUserRole.jsx
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useQuery } from '@tanstack/react-query'; // tanstack query ব্যবহার করে ডাটা ফেচিং
+import { useQuery } from '@tanstack/react-query'; 
 
 const useUserRole = (email) => {
     const [role, setRole] = useState(null);
@@ -15,14 +15,14 @@ const useUserRole = (email) => {
                 return null;
             }
             try {
-                const res = await axios.get(`http://localhost:3000/users/${email}`); // সার্ভার URL পরিবর্তন করুন
+                const res = await axios.get(`http://localhost:3000/users/${email}`); 
                 return res.data;
             } catch (error) {
                 console.error("Error fetching user role:", error);
                 return null;
             }
         },
-        enabled: !!email, // Only run query if email exists
+        enabled: !!email, 
     });
 
     useEffect(() => {
@@ -30,11 +30,11 @@ const useUserRole = (email) => {
             setRole(userRoleData.role);
             setIsRoleLoading(false);
         } else if (!queryLoading && !userRoleData && email) {
-            // If user data not found after query, assume default 'user' role or handle as needed
+            
             setRole('user'); 
             setIsRoleLoading(false);
         } else if (!email) {
-            setRole(null); // No email, no role
+            setRole(null); 
             setIsRoleLoading(false);
         }
     }, [userRoleData, queryLoading, email]);
