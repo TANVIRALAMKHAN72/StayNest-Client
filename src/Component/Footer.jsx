@@ -5,10 +5,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-base-300 bg-base-200 dark:bg-neutral py-8 px-4 transition-all duration-300">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        
-        {/* Left Side - Logo and Socials */}
         <div className="flex flex-col items-center md:items-start">
-          {/* Logo and Brand Name */}
           <div className="flex items-center">
             <img
               className="w-12 h-12 ml-1 cursor-pointer"
@@ -20,7 +17,6 @@ const Footer = () => {
             </span>
           </div>
 
-          {/* Social Icons below Name */}
           <div className="flex space-x-5 mt-4">
             <a
               href="https://facebook.com"
@@ -47,7 +43,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right Side - Copyright / Support */}
         <div className="text-center md:text-right text-gray-600 dark:text-gray-400 text-sm">
           <p>© {new Date().getFullYear()} StayNest. All rights reserved.</p>
           <p>
