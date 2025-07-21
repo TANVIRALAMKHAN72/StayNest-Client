@@ -1,4 +1,3 @@
-// src/Routes/MemberRoute.jsx
 import React from 'react';
 import { Navigate, useLocation } from 'react-router';
 // import useAuth from '../Hooks/useAuth';
@@ -23,7 +22,6 @@ const MemberRoute = ({ children }) => {
         return children;
     }
 
-    // Redirect to dashboard or home if not a member
     return <Navigate to="/dashboard/my-profile" state={{ from: location }} replace />;
 };
 
