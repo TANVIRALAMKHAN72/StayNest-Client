@@ -25,7 +25,6 @@ const About = () => {
         </Fade>
 
         <div className="grid md:grid-cols-3 gap-8 mt-10 text-left">
-          {/* Card 1 */}
           <Fade direction="left" triggerOnce>
             <div className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
               <div className="flex items-center gap-3 mb-2 text-gray-800">
@@ -39,7 +38,6 @@ const About = () => {
             </div>
           </Fade>
 
-          {/* Card 2 */}
           <Fade direction="up" delay={200} triggerOnce>
             <div className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
               <div className="flex items-center gap-3 mb-2 text-gray-800">
@@ -53,7 +51,6 @@ const About = () => {
             </div>
           </Fade>
 
-          {/* Card 3 */}
           <Fade direction="right" delay={400} triggerOnce>
             <div className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
               <div className="flex items-center gap-3 mb-2 text-gray-800">
