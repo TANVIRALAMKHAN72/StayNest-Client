@@ -10,6 +10,7 @@ const Apartment = () => {
   const [total, setTotal] = useState(0);
   const [minRent, setMinRent] = useState("");
   const [maxRent, setMaxRent] = useState("");
+  const [isLoading, setIsLoading] = useState(true); 
   const limit = 6;
 
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ const Apartment = () => {
   };
 
   const fetchApartments = async () => {
+    setIsLoading(true); 
     try {
       const res = await axios.get("https://staynest-server.vercel.app/api/apartments", {
         params: {
@@ -45,6 +47,8 @@ const Apartment = () => {
       setTotal(res.data.total);
     } catch (error) {
       console.error("Error fetching apartments:", error);
+    } finally {
+      setIsLoading(false); 
     }
   };
 
@@ -89,29 +93,39 @@ const Apartment = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {apartments.map((apartment) => (
-          <div
-            key={apartment.apartmentNo}
-            className="bg-base-100 rounded-xl shadow px-2 py-4"
-          >
-            <img
-              src={apartment.image}
-              alt={apartment.apartmentNo}
-              className="w-full h-40 object-cover rounded mb-2"
-            />
-            <h2 className="font-semibold text-lg">{`Block ${apartment.blockName} - Apt ${apartment.apartmentNo}`}</h2>
-            <p>Floor No: {apartment.floorNo}</p>
-            <p>Rent: {apartment.rent} TK</p>
-            <button
-              className="mt-2 bg-green-600 text-white px-4 py-1 rounded"
-              onClick={() => handleAgreementClick(apartment)}
+      {isLoading ? (
+        <div className="flex justify-center items-center h-64">
+  <div className="flex flex-col items-center">
+    <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    <p className="mt-4 text-lg font-semibold text-gray-600">Loading apartments...</p>
+  </div>
+</div>
+
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {apartments.map((apartment) => (
+            <div
+              key={apartment.apartmentNo}
+              className="bg-base-100 rounded-xl shadow px-2 py-4"
             >
-              Agreement
-            </button>
-          </div>
-        ))}
-      </div>
+              <img
+                src={apartment.image}
+                alt={apartment.apartmentNo}
+                className="w-full h-40 object-cover rounded mb-2"
+              />
+              <h2 className="font-semibold text-lg">{`Block ${apartment.blockName} - Apt ${apartment.apartmentNo}`}</h2>
+              <p>Floor No: {apartment.floorNo}</p>
+              <p>Rent: {apartment.rent} TK</p>
+              <button
+                className="mt-2 bg-green-600 text-white px-4 py-1 rounded"
+                onClick={() => handleAgreementClick(apartment)}
+              >
+                Agreement
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
 
       <div className="mt-6 flex justify-center gap-2">
         <button
