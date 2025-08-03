@@ -8,7 +8,7 @@ import ApplyAgreement from "../Pages/ApplyAgreement";
 import PrivateRoute from "../Routes/PrivateRoute";
 import ErrorPage from "../Pages/ErrorPage";
 
-// import AdminRoute from "../Routes/AdminRoute";
+
 import DashboardLayout from "../DashboardLayout ";
 import MyProfile from "../Dashboard/MyProfile";
 import Announcements from "../Dashboard/Announcements";
@@ -21,6 +21,7 @@ import ManageMembers from "../Pages/ManageMembers";
 import MakeAnnouncement from "../Pages/MakeAnnouncement";
 import AgreementRequests from "../Pages/AgreementRequests";
 import ManageCoupons from "../Pages/ManageCoupons";
+import BlogPage from "../Component/BlogPage";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/apartment",
         element: <Apartment />,
+      },
+      {
+        path: "/blog",
+        element: <BlogPage></BlogPage>,
       },
       {
         path: "/apply-agreement/:id",
