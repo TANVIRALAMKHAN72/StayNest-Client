@@ -6,6 +6,7 @@ import ApartmentLocation from '../Component/ApartmentLocation';
 import LandingApartments from '../Component/LandingApartments';
 import ReviewsSection from '../Component/ReviewsSection';
 import NewsletterSection from '../Component/NewsletterSection';
+import Partners from '../Component/Partners';
 
 
 const HomePage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
             <LandingApartments></LandingApartments>
             <Coupon></Coupon>
             <ReviewsSection></ReviewsSection>
+            <Partners></Partners>
             <ApartmentLocation></ApartmentLocation>
             <NewsletterSection></NewsletterSection>
         </div>
