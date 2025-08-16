@@ -10,6 +10,18 @@ const Navbar = () => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+  const goToCoupons = () => {
+    navigate("/#coupons");
+    // একটু delay দিয়ে smooth scroll করানো
+    setTimeout(() => {
+      const section = document.getElementById("coupons");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
+  };
+
+
   const handleLogout = () => {
     logOut()
       .then(() => {
@@ -34,10 +46,10 @@ const Navbar = () => {
         <Link className="font-semibold text-gray-800 dark:text-black" to="/apartment">Apartment</Link>
       </li>
     <li>
-  <a className="font-semibold cursor-pointer text-gray-800 dark:text-black" href="#coupons">
-    Coupons
-  </a>
-</li>
+        <button onClick={goToCoupons} className="font-semibold text-gray-800 dark:text-black">
+          Coupons
+        </button>
+      </li>
       <li>
         <Link className="font-semibold text-gray-800 dark:text-black" to="/blog">Blog</Link>
       </li>
@@ -45,7 +57,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#FAF7F3] shadow-sm relative">
+    <div className="navbar bg-[#FAF7F3] shadow-sm relative sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="cursor-pointer lg:hidden">

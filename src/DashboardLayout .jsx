@@ -31,7 +31,7 @@ const DashboardLayout = () => {
     <li>
       <Link
         to="/dashboard/my-profile"
-        className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+        className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
       >
         <FaUser /> My Profile
       </Link>
@@ -39,7 +39,7 @@ const DashboardLayout = () => {
     <li>
       <Link
         to="/dashboard/announcements"
-        className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+        className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
       >
         <FaBullhorn /> Announcements
       </Link>
@@ -53,7 +53,7 @@ const DashboardLayout = () => {
       <li>
         <Link
           to="/dashboard/make-payment"
-          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
         >
           <FaMoneyBillWave /> Make Payment
         </Link>
@@ -61,7 +61,7 @@ const DashboardLayout = () => {
       <li>
         <Link
           to="/dashboard/payment-history"
-          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
         >
           <FaHistory /> Payment History
         </Link>
@@ -76,7 +76,7 @@ const DashboardLayout = () => {
       <li>
         <Link
           to="/dashboard/admin-profile"
-          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
         >
           <FaChartBar /> Admin Profile
         </Link>
@@ -84,7 +84,7 @@ const DashboardLayout = () => {
       <li>
         <Link
           to="/dashboard/manage-members"
-          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
         >
           <FaUsers /> Manage Members
         </Link>
@@ -92,7 +92,7 @@ const DashboardLayout = () => {
       <li>
         <Link
           to="/dashboard/make-announcement"
-          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
         >
           <FaBullhorn /> Make Announcement
         </Link>
@@ -100,7 +100,7 @@ const DashboardLayout = () => {
       <li>
         <Link
           to="/dashboard/agreement-requests"
-          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
         >
           <FaBuilding /> Agreement Requests
         </Link>
@@ -108,7 +108,7 @@ const DashboardLayout = () => {
       <li>
         <Link
           to="/dashboard/manage-coupons"
-          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+          className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
         >
           <FaTicketAlt /> Manage Coupons
         </Link>
@@ -126,7 +126,7 @@ const DashboardLayout = () => {
           <li>
             <Link
               to="/"
-              className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200"
+              className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:text-black"
             >
               Back to Home
             </Link>

@@ -305,10 +305,10 @@ const MakePayment = () => {
         Make a Payment
       </h2>
 
-      <div className="bg-white p-8 rounded-lg shadow-md max-w-lg mx-auto">
+      <div className="bg-white p-8 rounded-lg shadow-md max-w-lg mx-auto dark:bg-[#B2B2B2">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div>
-            <label className="label">Member Email</label>
+          <div >
+            <label className="label dark:text-black">Member Email</label>
             <input
               type="text"
               {...register("memberEmail")}
@@ -318,7 +318,7 @@ const MakePayment = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="label">Floor</label>
+              <label className="label dark:text-black">Floor</label>
               <input
                 type="text"
                 {...register("floor")}
@@ -327,7 +327,7 @@ const MakePayment = () => {
               />
             </div>
             <div>
-              <label className="label">Block Name</label>
+              <label className="label dark:text-black">Block Name</label>
               <input
                 type="text"
                 {...register("blockName")}
@@ -336,7 +336,7 @@ const MakePayment = () => {
               />
             </div>
             <div>
-              <label className="label">Apartment No.</label>
+              <label className="label dark:text-black">Apartment No.</label>
               <input
                 type="text"
                 {...register("apartmentNo")}
@@ -347,7 +347,7 @@ const MakePayment = () => {
           </div>
 
           <div>
-            <label className="label">Original Rent</label>
+            <label className="label dark:text-black">Original Rent</label>
             <input
               type="number"
               step="0.01"
@@ -364,7 +364,7 @@ const MakePayment = () => {
           </div>
 
           <div>
-            <label className="label">Month to Pay</label>
+            <label className="label dark:text-black">Month to Pay</label>
             <select
               {...register("month", { required: "Please select a month" })}
               className="select select-bordered w-full"
@@ -392,7 +392,7 @@ const MakePayment = () => {
 
           <div className="flex items-end gap-2">
             <div className="flex-grow">
-              <label className="label">Coupon Code (Optional)</label>
+              <label className="label dark:text-black">Coupon Code (Optional)</label>
               <input
                 type="text"
                 {...register("couponCode")}
@@ -409,10 +409,10 @@ const MakePayment = () => {
             </button>
           </div>
           {couponError && (
-            <p className="text-red-500 text-sm mt-1">{couponError}</p>
+            <p className="text-red-500 text-sm mt-1 dark:text-black">{couponError}</p>
           )}
           {appliedCoupon && (
-            <p className="text-green-600 text-md font-semibold mt-2">
+            <p className="text-green-600 text-md font-semibold mt-2 dark:text-black">
               Applied: "{appliedCoupon.couponCode}" -{" "}
               {appliedCoupon.discountPercentage}% Discount!
             </p>
@@ -420,13 +420,13 @@ const MakePayment = () => {
 
           {parseFloat(manualInputRent) > 0 && (
             <div className="mt-4 p-4 bg-blue-50 rounded-md">
-              <p className="text-lg font-semibold text-gray-800">
+              <p className="text-lg font-semibold text-gray-800 dark:text-black">
                 Final Amount to Pay:{" "}
-                <span className="text-blue-600">
+                <span className="text-blue-600 dark:text-black">
                   ${discountedRent.toFixed(2)}
                 </span>
                 {appliedCoupon && (
-                  <span className="text-sm text-gray-500 ml-2 line-through">
+                  <span className="text-sm text-gray-500 ml-2 line-through dark:text-black">
                     ${parseFloat(manualInputRent).toFixed(2)}
                   </span>
                 )}
@@ -436,10 +436,10 @@ const MakePayment = () => {
 
           {parseFloat(manualInputRent) > 0 && (
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
+              <label className="block text-gray-700 text-sm font-bold mb-2 dark:text-black">
                 Card Details:
               </label>
-              <div className="border border-gray-300 p-3 rounded-md">
+              <div className="border border-gray-300 p-3 rounded-md dark:text-black">
                 <CardElement
                   options={{
                     style: {
@@ -459,7 +459,7 @@ const MakePayment = () => {
           <div>
             <button
               type="submit"
-              className="btn btn-primary w-full flex items-center justify-center gap-2"
+              className="btn btn-primary w-full flex items-center justify-center gap-2 dark:text-black"
               disabled={
                 !stripe ||
                 !elements ||

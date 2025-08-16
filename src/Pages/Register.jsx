@@ -88,12 +88,12 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-100 px-4 py-8">
+    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-base-100 px-4 py-8 ">
       <div className="w-full lg:w-1/2">
         <Lottie animationData={lottie} loop={true} />
       </div>
 
-      <div className="w-full max-w-md p-8 space-y-4 bg-white rounded shadow-lg">
+      <div className="w-full max-w-md p-8 space-y-4 bg-white rounded shadow-lg dark:bg-[#2F3645]">
         <h2 className="text-2xl font-bold text-center">Register</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

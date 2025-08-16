@@ -48,7 +48,7 @@ const ApplyAgreement = () => {
   };
 
   return (
-    <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4 overflow-hidden relative">
         
         <img
@@ -58,9 +58,9 @@ const ApplyAgreement = () => {
         />
 
         
-        <div className="p-6">
-          <h2 className="text-2xl font-bold mb-3 text-center">Confirm Agreement</h2>
-          <div className="space-y-1">
+        <div className="p-6 ">
+          <h2 className="text-2xl font-bold mb-3 text-center dark:text-black">Confirm Agreement</h2>
+          <div className="space-y-1  dark:text-black">
             <p><strong>Name:</strong> {user?.displayName}</p>
             <p><strong>Email:</strong> {user?.email}</p>
             <p><strong>Block:</strong> {apartment.blockName}</p>

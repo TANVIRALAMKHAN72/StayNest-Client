@@ -60,7 +60,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col-reverse lg:flex-row justify-center items-center min-h-screen bg-base-200 px-4">
-      <div className="w-full max-w-md p-8 shadow-md bg-white rounded-md">
+      <div className="w-full max-w-md p-8 shadow-md bg-white dark:bg-[#2F3645] rounded-md">
         <h2 className="text-2xl font-bold text-center mb-6">
           Login to Your Account
         </h2>
@@ -128,7 +128,7 @@ const Login = () => {
         </button>
       </div>
 
-      <div className="max-w-md w-full lg:ml-10 mb-10 lg:mb-0">
+      <div className="max-w-md w-full lg:ml-10 mb-10 lg:mb-0 ">
         <Lottie animationData={lottieAnimation} loop={true} />
       </div>
     </div>

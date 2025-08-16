@@ -53,7 +53,7 @@ const Coupon = () => {
   }
 
   return (
-    <section id="coupons" className="py-16 px-4 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 transition-colors duration-500">
+    <section id="coupons" className="py-16 px-4 bg-gradient-to-r from-blue-100 to-blue-200 dark:bg-[#939185] transition-colors duration-500">
       <div className="max-w-5xl mx-auto text-center">
         <Slide direction="up" triggerOnce>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 flex items-center justify-center gap-2">

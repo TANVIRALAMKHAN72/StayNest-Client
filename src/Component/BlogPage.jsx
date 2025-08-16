@@ -41,7 +41,7 @@ const blogPosts = [
 const BlogPage = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+      <h1 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
         StayNest Blog
       </h1>
 
@@ -49,7 +49,7 @@ const BlogPage = () => {
         {blogPosts.map(({ id, title, date, summary }) => (
           <div
             key={id}
-            className="bg-white border border-gray-200 rounded-2xl p-6 shadow hover:shadow-lg transition duration-300"
+            className="bg-[#FFF0DC] border border-gray-200 rounded-2xl p-6 shadow hover:shadow-lg transition duration-300"
           >
             <h2 className="text-xl font-semibold text-blue-600 mb-2">{title}</h2>
             <p className="text-sm text-gray-500 mb-3">

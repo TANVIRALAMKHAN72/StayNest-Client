@@ -42,7 +42,7 @@ const PaymentHistory = () => {
   }
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-gray-50 min-h-screen ">
       <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
         Payment History
       </h2>
@@ -53,10 +53,10 @@ const PaymentHistory = () => {
             No payment history found yet.
           </p>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="table w-full">
+          <div className="overflow-x-auto ">
+            <table className="table w-full ">
               <thead>
-                <tr>
+                <tr className="dark:text-black">
                   <th>#</th>
                   <th>Month</th>
                   <th>Original Rent</th>
@@ -66,7 +66,7 @@ const PaymentHistory = () => {
                   <th>Payment Date</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="dark:text-black">
                 {payments.map((payment, index) => (
                   <tr key={payment._id}>
                     <th>{index + 1}</th>

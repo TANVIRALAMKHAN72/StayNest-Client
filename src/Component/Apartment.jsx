@@ -106,7 +106,7 @@ const Apartment = () => {
           {apartments.map((apartment) => (
             <div
               key={apartment.apartmentNo}
-              className="bg-base-100 rounded-xl shadow px-2 py-4"
+              className="dark:bg-[#2F3645] rounded-xl shadow px-2 py-4"
             >
               <img
                 src={apartment.image}
