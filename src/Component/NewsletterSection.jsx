@@ -9,7 +9,6 @@ const NewsletterSection = () => {
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (!email) return;
-    // এখানে API call করতে পারেন, এখন শুধু simulate করছি
     setSubscribed(true);
     setEmail("");
     setTimeout(() => setSubscribed(false), 3000);
