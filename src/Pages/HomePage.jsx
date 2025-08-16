@@ -5,6 +5,7 @@ import Coupon from '../Component/Coupon';
 import ApartmentLocation from '../Component/ApartmentLocation';
 import LandingApartments from '../Component/LandingApartments';
 import ReviewsSection from '../Component/ReviewsSection';
+import NewsletterSection from '../Component/NewsletterSection';
 
 
 const HomePage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
             <Coupon></Coupon>
             <ReviewsSection></ReviewsSection>
             <ApartmentLocation></ApartmentLocation>
+            <NewsletterSection></NewsletterSection>
         </div>
     );
 };
