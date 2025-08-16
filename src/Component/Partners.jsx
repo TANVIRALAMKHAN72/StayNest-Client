@@ -5,17 +5,17 @@ import "swiper/css";
 import { Fade } from "react-awesome-reveal";
 
 const partners = [
-  { name: "Bank of America", logo: "https://i.ibb.co/2nK9s7V/bank-of-america.png" },
-  { name: "Visa", logo: "https://i.ibb.co/F6TqFv1/visa.png" },
-  { name: "Mastercard", logo: "https://i.ibb.co/0J8nS3p/mastercard.png" },
-  { name: "Paypal", logo: "https://i.ibb.co/7r45kGm/paypal.png" },
-  { name: "HSBC", logo: "https://i.ibb.co/YL0r4X5/hsbc.png" },
-  { name: "Stripe", logo: "https://i.ibb.co/hKc4qV9/stripe.png" },
+  { name: "Bank of America", logo: "https://i.ibb.co/chHwsCMk/download-5.png" },
+  { name: "Visa", logo: "https://i.ibb.co/gbtySB77/download-1.png" },
+  { name: "Mastercard", logo: "https://i.ibb.co/hF4NK3sS/download-1.jpg" },
+  { name: "Paypal", logo: "https://i.ibb.co/yntWqz10/download-6.png" },
+  { name: "HSBC", logo: "https://i.ibb.co/pvrtMvRY/download.jpg" },
+  { name: "Stripe", logo: "https://i.ibb.co/p68xfQwS/download-4.png" },
 ];
 
 const Partners = () => {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gray-100 dark:bg-gray-800">
       <div className="max-w-6xl mx-auto text-center px-4">
         <Fade direction="up" triggerOnce>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
@@ -40,11 +40,11 @@ const Partners = () => {
         >
           {partners.map((partner, index) => (
             <SwiperSlide key={index} className="flex justify-center items-center">
-              <div className="p-4 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105 duration-300">
+              <div className="p-6 bg-white dark:bg-gray-700 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:scale-105 duration-300 flex justify-center items-center h-32">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
+                  className="max-h-20 object-contain grayscale hover:grayscale-0 transition duration-300"
                 />
               </div>
             </SwiperSlide>
