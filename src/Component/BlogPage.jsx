@@ -60,9 +60,7 @@ const BlogPage = () => {
               })}
             </p>
             <p className="text-gray-700 mb-4">{summary}</p>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-              Read More
-            </button>
+           
           </div>
         ))}
       </div>
