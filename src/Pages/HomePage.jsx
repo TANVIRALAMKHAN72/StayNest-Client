@@ -3,6 +3,7 @@ import Hero from '../Component/Hero';
 import About from '../Component/About';
 import Coupon from '../Component/Coupon';
 import ApartmentLocation from '../Component/ApartmentLocation';
+import LandingApartments from '../Component/LandingApartments';
 
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
         <div>
             <Hero></Hero>
             <About></About>
+            <LandingApartments></LandingApartments>
             <Coupon></Coupon>
             <ApartmentLocation></ApartmentLocation>
         </div>

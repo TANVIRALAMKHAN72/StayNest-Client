@@ -103,7 +103,7 @@ const AgreementRequests = () => {
           <div className="overflow-x-auto">
             <table className="table w-full">
               <thead>
-                <tr>
+                <tr className="dark:text-black">
                   <th>#</th>
                   <th>User Name</th>
                   <th>User Email</th>
@@ -115,7 +115,7 @@ const AgreementRequests = () => {
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="dark:text-black">
                 {agreements.map((agreement, index) => (
                   <tr key={agreement._id}>
                     <th>{index + 1}</th>

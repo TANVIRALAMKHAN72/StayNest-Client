@@ -38,7 +38,7 @@ const MakeAnnouncement = () => {
       <div className="bg-white p-8 rounded-lg shadow-md max-w-md mx-auto">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label className="label">Title</label>
+            <label className="label dark:text-black">Title</label>
             <input
               type="text"
               {...register("title", { required: "Title is required" })}
@@ -53,7 +53,7 @@ const MakeAnnouncement = () => {
           </div>
 
           <div>
-            <label className="label">Description</label>
+            <label className="label dark:text-black">Description</label>
             <textarea
               {...register("description", {
                 required: "Description is required",

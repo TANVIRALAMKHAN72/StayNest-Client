@@ -117,7 +117,7 @@ const ManageCoupons = () => {
           <div className="overflow-x-auto">
             <table className="table w-full">
               <thead>
-                <tr>
+                <tr className="dark:text-black">
                   <th>#</th>
                   <th>Code</th>
                   <th>Discount (%)</th>
@@ -126,7 +126,7 @@ const ManageCoupons = () => {
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="dark:text-black">
                 {coupons.map((coupon, index) => (
                   <tr key={coupon._id}>
                     <th>{index + 1}</th>

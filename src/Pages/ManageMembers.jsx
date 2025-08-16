@@ -66,7 +66,7 @@ const ManageMembers = () => {
         <div className="overflow-x-auto">
           <table className="table w-full">
             <thead>
-              <tr>
+              <tr className="dark:text-black">
                 <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
@@ -74,7 +74,7 @@ const ManageMembers = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="dark:text-black">
               {users.map((user, index) => (
                 <tr key={user._id}>
                   <th>{index + 1}</th>
