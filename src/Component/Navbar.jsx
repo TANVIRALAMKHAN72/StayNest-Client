@@ -28,19 +28,24 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="font-semibold text-gray-800 dark:text-black" to="/">Home</Link>
       </li>
       <li>
-        <Link to="/apartment">Apartment</Link>
+        <Link className="font-semibold text-gray-800 dark:text-black" to="/apartment">Apartment</Link>
       </li>
+    <li>
+  <a className="font-semibold cursor-pointer text-gray-800 dark:text-black" href="#coupons">
+    Coupons
+  </a>
+</li>
       <li>
-        <Link to="/blog">Blog</Link>
+        <Link className="font-semibold text-gray-800 dark:text-black" to="/blog">Blog</Link>
       </li>
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm relative">
+    <div className="navbar bg-[#FAF7F3] shadow-sm relative">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="cursor-pointer lg:hidden">
@@ -67,7 +72,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img className="w-12 h-12 ml-3 cursor-pointer" src={logo} alt="logo" />
-        <Link to="/" className="ml-3 text-xl font-bold">
+        <Link to="/" className="ml-3 text-xl font-bold  text-gray-800 dark:text-black">
           StayNest
         </Link>
       </div>
